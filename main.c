@@ -41,21 +41,25 @@ int jeCislo(char *data)
   return cislo;
 }
 
+
 int vstup;
 char data[101];
 /*int argc, char const *argv[]*/
+
 int main(void)
 {
 
-  printf ("Zadej data:\n");
-  vstup = scanf("%s", data); //uloží vstup z klávesnice do pole data
+printf ("Zadej data:\n");
+vstup = scanf("%s", data); //uloží vstup z klávesnice do pole data
+
 
   while (vstup != EOF)
   {
     if (jeCislo(data) == 1)
     {
-      int cisloVstup = atoi(data);
-      printf("Číslo, které jste zadali je: %d\n", cisloVstup);
+      unsigned int cisloVstup = atoi(data);
+      printf("Integer, které jste zadali je: %d\n", cisloVstup);
+      printf("Převedeno do hexadecimální soustavy číslo je: %X\n", cisloVstup);
     }
 
     else if (jeCislo(data) == 0)
@@ -65,5 +69,6 @@ int main(void)
 
     vstup = scanf("%s", data); //ceka stale na dalsi vstup
   }
+
   return 0;
 }
