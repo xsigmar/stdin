@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <limits.h>
 
-/*
+
 int delkaRetezce(char *data)
 {
     int delka = 0;
@@ -16,14 +16,12 @@ int delkaRetezce(char *data)
 
     return delka;
 }
-ú
-*/
 
 int jeCislo(char *data)
 {
   int c;
   int cislo = 0;
-  int delka = strlen(data);
+  int delka = delkaRetezce(data);
 
   for (c = 0; c < delka; c++) //iteruje do konce delky retezce
   {
@@ -41,15 +39,13 @@ int jeCislo(char *data)
   return cislo;
 }
 
-
 int vstup;
 char data[101];
-/*int argc, char const *argv[]*/
 
 int main(void)
 {
 
-printf ("Zadej data:\n");
+printf ("Zadej data: ");
 vstup = scanf("%s", data); //uloží vstup z klávesnice do pole data
 
 
@@ -66,8 +62,14 @@ vstup = scanf("%s", data); //uloží vstup z klávesnice do pole data
     {
       printf("Slovo, které jste zadali je: %s\n", data);
     }
+    else
+    {
+      return 0;
+    }
+    
+    vstup = scanf("%s", data); //ceka stale na dalsi vstup (nekonečný)
 
-    vstup = scanf("%s", data); //ceka stale na dalsi vstup
+
   }
 
   return 0;
